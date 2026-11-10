@@ -209,12 +209,18 @@ export const allowedLinkHosts = [
   "meta.com",
 ];
 
-export function isAllowedLink(raw) {
+export function isAllowedLink(raw, permissions = { x: true, youtube: true, google: true, meta: true }) {
   try {
     const url = new URL(raw.startsWith("http") ? raw : `https://${raw}`);
-    return allowedLinkHosts.some(
+    const categoryHosts = {
+      x: ["x.com", "twitter.com"],
+      youtube: ["youtu.be", "youtube.com"],
+      google: ["google.com", "google.co.in"],
+      meta: ["facebook.com", "instagram.com", "threads.net", "whatsapp.com", "meta.com"],
+    };
+    return Object.entries(categoryHosts).some(([category, hosts]) => permissions[category] && hosts.some(
       (host) => url.hostname === host || url.hostname.endsWith(`.${host}`),
-    );
+    ));
   } catch {
     return false;
   }
