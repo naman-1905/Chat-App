@@ -10,3 +10,11 @@ button { cursor: pointer; }
 ::selection { background: #c9decf; }
 .scrollbar-none { scrollbar-width: none; }
 .scrollbar-none::-webkit-scrollbar { display: none; }
+@keyframes rise-in { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
+main > div > div { animation: rise-in 220ms ease-out both; }
+button { transition-property: color, background-color, border-color, transform, box-shadow; transition-duration: 180ms; }
+button:hover { --tw-ring-color: var(--accent); }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: .01ms !important; transition-duration: .01ms !important; scroll-behavior: auto !important; }
+}
