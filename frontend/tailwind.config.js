@@ -4,17 +4,23 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        ink: "#18201d",
-        paper: "#f5f6f2",
-        moss: "#315c4b",
-        mint: "#dce9df",
-        line: "#e8eae5",
+        ink: "#171717",
+        paper: "#f7f7f7",
+        moss: "#171717",
+        mint: "#fff3bd",
+        line: "#eeeeee",
+        sunny: "#ffc900",
       },
       fontFamily: {
         sans: ["Arial", "Helvetica", "sans-serif"],
       },
+      borderRadius: {
+        xl: "1.125rem",
+        "2xl": "1.5rem",
+        "3xl": "2rem",
+      },
       boxShadow: {
-        soft: "0 10px 35px rgba(32, 48, 39, 0.07)",
+        soft: "0 12px 36px rgba(20, 20, 20, 0.08)",
       },
     },
   },
